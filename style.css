@@ -1,0 +1,436 @@
+/* style.css */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #007bff; /* Contoh warna biru */
+    color: white;
+    padding: 0px;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    background-color: white; /* Menambahkan background putih pada nav */
+    padding: 10px 20px; /* Menambahkan padding agar tidak terlalu mepet */
+
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 10px;
+}
+
+nav a {
+    color: #333; /* Mengubah warna teks menu menjadi gelap agar terlihat di background putih */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transisi untuk efek hover yang lebih halus */
+}
+
+nav a:hover {
+    color: #007bff; /* Warna biru saat di hover */
+}
+
+.logo {
+    background-color: white; /* Menambahkan background putih pada logo */
+    padding: 5px 10px; /* Sedikit padding di sekitar logo */
+    border-radius: 5px; /* Memberikan sudut bulat pada background logo */
+    transition: transform 0.3s ease; /* Transisi untuk animasi yang halus */
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+.logo:hover {
+    transform: scale(1.05); /* Memperbesar 5% */
+}
+
+.menu-toggle {
+    display: none; /* Sembunyikan tombol burger di layar besar */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Media query untuk layar kecil (misalnya, di bawah 768px) */
+@media (max-width: 768px) {
+    nav ul.menu {
+        display: none; /* Sembunyikan menu default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Atur posisi di bawah navbar */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tambahkan shadow */
+        z-index: 100; /* Pastikan menu di atas konten lain */
+    }
+
+    nav ul.menu.active { /* Tampilkan menu saat class "active" ditambahkan */
+        display: flex;
+    }
+    nav ul.menu li{
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+    nav ul.menu li:last-child{
+        border-bottom: none;
+    }
+
+    .menu-toggle {
+        display: flex; /* Tampilkan tombol burger */
+    }
+    nav{
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+}
+
+#selamat-datang {
+    background-image: url("Image/Depan\ ruang\ kelas.jpeg"); /* Path ke gambar */
+    background-size: cover; /* Memastikan gambar menutupi seluruh area */
+    background-repeat: no-repeat; /* Mencegah gambar berulang */
+    background-position: center; /* Memposisikan gambar di tengah */
+    padding: 100px 0; /* Memberikan padding atas dan bawah agar teks terlihat */
+    color: white; /* Warna teks agar kontras dengan latar belakang */
+    text-align: center;
+}
+#selamat-datang .hero{
+    background-color: rgba(0, 0, 0, 0.5); /* warna hitam agak transparan */
+    padding: 50px 0;
+    border-radius: 8px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.kepala-sekolah {
+    text-align: left; /* Memusatkan konten */
+    padding: 20px;
+}
+
+.foto-kepala-sekolah {
+    width: 200px; /* Lebar tetap */
+    height: 250px; /* Tinggi tetap */
+    border-radius: 50%; /* Membuat gambar bulat */
+    overflow: hidden; /* Memotong gambar jika tidak proporsional */
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan */
+}
+
+.foto-kepala-sekolah img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar mengisi container dengan proporsional dan tidak distorsi */
+}
+
+.kepala-sekolah a:hover {
+    background-color: #e0e0e0;
+}
+/* Style untuk nama kepala sekolah */
+.nama-kepala-sekolah {
+    font-size: 1.5em; /* Ukuran font lebih besar */
+    font-weight: bold; /* Teks tebal */
+    margin-bottom: 10px; /* Jarak bawah */
+    color: #333;
+  }
+/* Style untuk kata pembuka */
+.kata-pembuka {
+    text-align: justify; /* Teks rata kanan kiri */
+    line-height: 1.4; /* Jarak antar baris */
+    color: #555;
+  }
+
+.highlights {
+    display: flex; /* Mengaktifkan flexbox */
+    justify-content: space-around; /* Memberi jarak di antara item */
+    padding: 50px;
+    background-color: #f4f4f4;
+    flex-wrap: wrap; /* Penting untuk responsif */
+}
+
+.highlight {
+    text-align: center;
+    width: 30%; /* Lebar setiap kolom (mendekati 1/3) */
+    box-sizing: border-box; /* Memastikan padding dan border termasuk dalam lebar */
+    margin-bottom: 20px; /* Jarak bawah antar item jika wrap */
+}
+
+@media (max-width: 768px) { /* Media query untuk layar kecil */
+    .highlight {
+        width: 100%; /* Lebar 100% di layar kecil */
+    }
+}
+
+.highlight img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #1f92f0;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsive design (contoh sederhana) */
+@media (max-width: 768px) {
+    .highlights {
+        flex-direction: column;
+        align-items: center;
+    }
+    .highlight {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+}
+/* style.css */
+.container-kontak {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#kontak .info-kontak {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    grid-gap: 20px;
+}
+
+#kontak h1, #kontak h2 {
+    color: #333;
+}
+
+#kontak .alamat, #kontak .kontak-lain, #kontak .peta {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+#kontak ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#kontak li {
+    margin-bottom: 5px;
+}
+
+#kontak strong {
+    font-weight: bold;
+}
+/* ... (style lainnya) */
+
+#profil-sekolah {
+    padding: 20px;
+}
+
+#profil-sekolah .container-profil {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+#profil-sekolah h1, #profil-sekolah h2, #profil-sekolah h3 {
+    color: #333;
+}
+
+#profil-sekolah h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#profil-sekolah h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #aca5a5;
+    padding-bottom: 5px;
+}
+
+#profil-sekolah p, #profil-sekolah li, #profil-sekolah dd {
+    text-align: justify;
+    margin-bottom: 10px;
+    color: #555;
+}
+#profil-sekolah ul{
+    list-style-type: disc;
+    padding-left: 20px;
+}
+#profil-sekolah dl{
+    padding-left: 20px;
+}
+#profil-sekolah dt{
+    font-weight: bold;
+}
+.pemisah {
+    height: 2px;
+    background-color: #ddd;
+    margin: 20px 0; /* Jarak atas dan bawah */
+}
+.kotak-saran {
+    background-color: #f9f9f9; /* Latar belakang abu-abu sangat muda */
+    border: 2px solid #007bff; /* Garis tepi biru */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.kotak-saran h2 {
+    color: #007bff; /* Warna judul biru */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.kotak-saran textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-family: sans-serif;
+}
+
+.kotak-saran button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.kotak-saran button:hover {
+    background-color: #0056b3;
+}
+/* style.css */
+#media-informasi {
+    padding: 20px;
+}
+
+#media-informasi .container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+#media-informasi h1, #media-informasi h2 {
+    color: #333;
+    text-align: center;
+}
+#media-informasi h1{
+    margin-bottom: 20px;
+}
+#media-informasi h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Style Berita */
+.berita-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+.berita-item{
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+.berita-item h3{
+    margin-bottom: 10px;
+}
+.berita-item p{
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+/* Style Pengumuman */
+#media-informasi ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+#media-informasi li{
+    margin-bottom: 5px;
+}
+
+/* Style Galeri Foto */
+.galeri-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+.galeri-list img{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Style Video */
+.video-list{
+    margin-bottom: 20px;
+}
+.video-list iframe{
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+.lihat-semua{
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: none;
+    background-color: #007bff;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    transition: background-color 0.3s;
+}
+.lihat-semua:hover{
+    background-color: #0056b3;
+}
+#galeri {
+    padding: 20px;
+}
+
+#galeri .container-galeri {
+    max-width: 960px;
+    margin: 0 auto;
+}
+/* ... (style lainnya) */
